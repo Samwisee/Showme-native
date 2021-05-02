@@ -4,7 +4,7 @@
     "slug": "Showme_native",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/showme.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Welcome to the Android Beta of Showme mobile! Download 'Expo go' from the Google Play Store and scan the QR code to get started. Casting is currently not enabled on this version but it will be coming soon.",
+    "githubUrl": "https://github.com/Samwisee/Showme-native"
   }
 }
