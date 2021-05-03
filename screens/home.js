@@ -1,21 +1,44 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, TextInput, FlatList, ScrollView, Button, TouchableOpacity, SafeAreaView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, View, TextInput, FlatList, ScrollView, Button, TouchableOpacity, SafeAreaView, Text } from 'react-native';
 import YoutubeEmbed from '../components/YoutubeEmbed'
 import BandCard from '../components/BandCard'
-import { bandArray } from '../bandCache'
+// import { bandArray } from '../bandCache'
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { StatusBar } from 'expo-status-bar';
+import getData from '../getData'
+import { bandArray } from '../bandCache';
 
 
 export default function HomeScreen() {
 
   // const {landscape} = useDeviceOrientation()
 
+  const navigation = useNavigation()
   const [search, setSearch] = useState('')
-  const navigation = useNavigation();
+  const [bands, setBands] = useState()
 
-  const sortedBandArray = bandArray.sort((a, b) => (a.bandName > b.bandName) ? 1 : ((b.bandName > a.bandName) ? -1 : 0))
+  useEffect(() => {
+    (async () => {
+      const bands = await getData()
+      setBands(bands)
+    })();
+  }, []) 
 
+
+
+
+
+
+
+
+  const sortBands = (bands) => {
+    const sortedBandArray = bands.sort((a, b) => (a.bandName > b.bandName) ? 1 : ((b.bandName > a.bandName) ? -1 : 0))
+    console.log(sortedBandArray)
+  }
+
+  // useMemo 
+  console.log(bands)
+  // Some loader is bands === undefined
   return(
 
   <View style={styles.mainContainer}>
@@ -38,9 +61,10 @@ export default function HomeScreen() {
         placeholder='Filter by Category...'
         placeholderTextColor="gray" 
       />
+
       <FlatList
         style={styles.list}
-        data={sortedBandArray}
+        data={bands}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
           

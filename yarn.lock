@@ -3247,6 +3247,11 @@
     "is-date-object" "^1.0.1"
     "is-symbol" "^1.0.2"
 
+"es6-error@^4.0.0":
+  "integrity" "sha512-Um/+FxMr9CISWh0bi5Zv0iOD+4cFh5qLeks1qhAopKVAJw3drgKbKySikp7wGhDL0HPeaja0P5ULZrxLkniUVg=="
+  "resolved" "https://registry.npmjs.org/es6-error/-/es6-error-4.1.1.tgz"
+  "version" "4.1.1"
+
 "escalade@^3.1.1":
   "integrity" "sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw=="
   "resolved" "https://registry.npmjs.org/escalade/-/escalade-3.1.1.tgz"
@@ -4306,7 +4311,7 @@
   "resolved" "https://registry.npmjs.org/isobject/-/isobject-3.0.1.tgz"
   "version" "3.0.1"
 
-"isomorphic-fetch@^2.1.1":
+"isomorphic-fetch@^2.1.1", "isomorphic-fetch@^2.2.1":
   "integrity" "sha1-YRrhrPFPXoH3KVB0coGf6XM1WKk="
   "resolved" "https://registry.npmjs.org/isomorphic-fetch/-/isomorphic-fetch-2.2.1.tgz"
   "version" "2.2.1"
@@ -5676,7 +5681,7 @@
   "resolved" "https://registry.npmjs.org/punycode/-/punycode-2.1.1.tgz"
   "version" "2.1.1"
 
-"qs@^6.5.1":
+"qs@^6.3.0", "qs@^6.5.1":
   "integrity" "sha512-M528Hph6wsSVOBiYUnGf+K/7w0hNshs/duGsNXPUCLH5XAqjEtiPGwNONLV0tBH8NoGb0mvD5JubnUTrujKDTg=="
   "resolved" "https://registry.npmjs.org/qs/-/qs-6.10.1.tgz"
   "version" "6.10.1"
@@ -6914,6 +6919,15 @@
   "version" "1.0.1"
   dependencies:
     "defaults" "^1.0.3"
+
+"webflow-api@^0.5.0":
+  "integrity" "sha512-HR5yRBgZf7z53ySQ2yR4phtxY3dLd7sTe0xsQVAau4jPLUQ7IVl9K7APM9ebJUsgLYvWiZEYihSLaPnFqZojFA=="
+  "resolved" "https://registry.npmjs.org/webflow-api/-/webflow-api-0.5.0.tgz"
+  "version" "0.5.0"
+  dependencies:
+    "es6-error" "^4.0.0"
+    "isomorphic-fetch" "^2.2.1"
+    "qs" "^6.3.0"
 
 "webpack-sources@^2.1.1":
   "integrity" "sha512-bQsA24JLwcnWGArOKUxYKhX3Mz/nK1Xf6hxullKERyktjNMC4x8koOeaDNTA2fEJ09BdWLbM/iTW0ithREUP0w=="

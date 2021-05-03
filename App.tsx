@@ -10,15 +10,11 @@ import Navigator from './routes/homeStack'
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
-
+import Constants from 'expo-constants';
 // import { useDeviceOrientation } from '@react-native-community/hooks'
-import { bandArray } from './bandCache'
-
 
 export default function App() {
   
-  // const {landscape} = useDeviceOrientation()
   
   const Stack = createStackNavigator();
   const [search, setSearch] = useState('')
