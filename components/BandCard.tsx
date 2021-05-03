@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     width: '100%',
     resizeMode: 'cover',
     flex: 1,
+    backgroundColor: 'black'
   },
   bandsText: {
     color: 'white',

@@ -20,6 +20,7 @@ export default function HomeScreen() {
   useEffect(() => {
     (async () => {
       const bands = await fetchBandData()
+      sortBands(bands)
       setBands(bands)
     })();
   }, []) 
@@ -30,7 +31,25 @@ export default function HomeScreen() {
 
   const sortBands = (bands) => {
     const sortedBandArray = bands.sort((a, b) => (a.bandName > b.bandName) ? 1 : ((b.bandName > a.bandName) ? -1 : 0))
-    console.log(sortedBandArray)
+  }
+
+  const searchBands = (search) => {
+    // $(".page-search").on("keyup", function() {
+    //   var v = $(this).val();
+    //   $(".results").removeClass("results");
+    //   $(".noresults").removeClass("noresults");
+    //   $(".artist").each(function() {
+    //     if (v != "" && $(this).text().search(new RegExp(v, 'gi')) != -1) {
+    //       $(this).addClass("results");
+    //     } else if (v != "" && $(this).text().search(v) != 1) {
+    //       $(this).addClass("noresults");
+    //     }
+    //   });
+    // });
+  
+    // if ( $(element).css('display') == 'none' || $(element).css("visibility") == "hidden"){
+  
+    // }
   }
 
   // useMemo 
@@ -82,6 +101,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: 'black',
+    flex: 1,
   },
   container: {
     borderWidth: 1,
@@ -90,7 +110,8 @@ const styles = StyleSheet.create({
     flex: 1,
     height: '100%',
     width: '90%',
-    marginHorizontal: '5%'
+    marginHorizontal: '5%',
+    backgroundColor: 'black'
   },
   youtubeContainer: {
     borderWidth: 1,

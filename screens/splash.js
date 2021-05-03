@@ -81,11 +81,11 @@ const styles = StyleSheet.create({
   button: {
     color: 'white',
     borderWidth: 1,
-    height: 20,
+    height: 18,
     borderColor: 'white',
     width: '60%',
     marginHorizontal: '20%',
-    marginTop: 18,
+    marginTop: 10,
     flex: 1,
     justifyContent: 'center'
   },
