@@ -3,6 +3,7 @@ import { StyleSheet, View, FlatList, Text } from 'react-native';
 import YoutubeEmbed from '../components/YoutubeEmbed'
 import concertArray from '../concertCache'
 import { useRoute } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
 
 export default function ConcertScreen({ navigation }) {
 
@@ -12,6 +13,9 @@ export default function ConcertScreen({ navigation }) {
 
   return(
     <View style={styles.mainContainer}>
+      <StatusBar 
+        hidden={true}
+      />
       <View style={styles.container}>
         <YoutubeEmbed 
           style={styles.youtubeEmbed} 

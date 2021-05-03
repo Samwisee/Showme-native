@@ -41,22 +41,29 @@ export default function App() {
           name="Splash"
           component={SplashScreen}
           options={{ 
-            headerShown: false }}
+            headerShown: false
+          }}
         />
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ headerTitle: "" }}
+          options={{ 
+            headerTitle: '',
+            headerBackTitle: 'Back'  }}
         />
         <Stack.Screen 
           name="Band" 
           component={BandScreen}
-          options={{ headerTitle: "" }}
+          options={{ 
+            headerTitle: '',
+            headerBackTitle: 'Back'  }}
         />
         <Stack.Screen 
           name="Concert" 
           component={ConcertScreen}
-          options={{ headerTitle: "" }}
+          options={{ 
+            headerTitle: '',
+            headerBackTitle: 'Back'  }}
         />
       </Stack.Navigator>
     </View>

@@ -59,9 +59,9 @@ export default function BandScreen() {
     },
     logo: {
       width: '90%',
-      height: 150,
+      height: 100,
       marginVertical: 20,
       resizeMode: "contain",
-      marginHorizontal: '5%'
+      marginHorizontal: '5%',
     }
   });
