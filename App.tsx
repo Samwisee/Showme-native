@@ -11,6 +11,8 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import TopBar from './components/TopBar';
+import { StatusBar } from 'expo-status-bar';
+
 
 export default function App() {
   
@@ -20,6 +22,10 @@ export default function App() {
 
   return (
   <NavigationContainer>
+    <StatusBar 
+    style="light"
+    backgroundColor="black"
+    />
     <View style={styles.section}>
       <Stack.Navigator
         screenOptions={{
