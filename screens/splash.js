@@ -1,7 +1,6 @@
 import React from 'react'
 import { StyleSheet, View, TouchableOpacity, Text, ImageBackground, Linking, Image } from 'react-native';
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
-import { StatusBar } from 'expo-status-bar';
 
 
 export default function SplashScreen({ navigation }) {
@@ -11,10 +10,7 @@ export default function SplashScreen({ navigation }) {
     source={require('../assets/splashBackground.png')}
     style={styles.concerts} 
     > 
-    {/* <StatusBar 
-    style="light"
-    backgroundColor="black"
-    /> */}
+    
       <View style={styles.card}>
         <View style={styles.wrapper}>
           <Image

@@ -69,12 +69,12 @@ export default function HomeScreen() {
       </View>
 
       <TextInput style={styles.search}   
-        placeholder='Search for Artist...'
+        placeholder='Search for Artist...(in development)'
         placeholderTextColor="gray"
         onChangeText={(val) => setSearch(val)} 
         />
       <TextInput style={styles.search}
-        placeholder='Filter by Category...'
+        placeholder='Filter by Category...(in development)'
         placeholderTextColor="gray" 
         />
 

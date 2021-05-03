@@ -28,7 +28,6 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "Welcome to the Showme native Beta! This version should run on both iOS and Android, however you will need to download 'Expo Go' from the App/Play store.",
-    "githubUrl": "https://github.com/Samwisee/Showme-native"
+    "description": ""
   }
 }
