@@ -7,6 +7,7 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { StatusBar } from 'expo-status-bar';
 import fetchBandData from '../fetchBandData'
 import { bandArray } from '../bandCache';
+import TopBar from '../components/TopBar';
 
 
 export default function HomeScreen() {
@@ -58,8 +59,8 @@ export default function HomeScreen() {
 
   <View style={styles.mainContainer}>
             
-    <SafeAreaView>
-
+    <ScrollView style={styles.scroll}>
+      <TopBar />
       <View style={styles.youtubeContainer}>
         <YoutubeEmbed 
         style={styles.youtubeEmbed} 
@@ -71,11 +72,11 @@ export default function HomeScreen() {
         placeholder='Search for Artist...'
         placeholderTextColor="gray"
         onChangeText={(val) => setSearch(val)} 
-      />
+        />
       <TextInput style={styles.search}
         placeholder='Filter by Category...'
         placeholderTextColor="gray" 
-      />
+        />
 
       <FlatList
         style={styles.list}
@@ -94,7 +95,7 @@ export default function HomeScreen() {
         )}
       />
       
-    </SafeAreaView>
+    </ScrollView>
   </View>
 )}
 
@@ -149,4 +150,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     color: 'white',
   },
+  list: {
+    marginBottom: 80
+  }
 });

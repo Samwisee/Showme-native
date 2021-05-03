@@ -10,7 +10,7 @@ import Navigator from './routes/homeStack'
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-// import { useDeviceOrientation } from '@react-native-community/hooks'
+import TopBar from './components/TopBar';
 
 export default function App() {
   
@@ -23,30 +23,34 @@ export default function App() {
     <View style={styles.section}>
       <Stack.Navigator
         screenOptions={{
+          headerTintColor: 'white',
           headerStyle: {
             backgroundColor: 'black',
+            shadowColor: 'transparent',
+            height: 30,
           }
         }}
       >
         <Stack.Screen
           name="Splash"
           component={SplashScreen}
-          options={{ title: 'Splash' }}
+          options={{ 
+            headerShown: false }}
         />
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: 'Home' }}
+          options={{ headerTitle: "" }}
         />
         <Stack.Screen 
           name="Band" 
           component={BandScreen}
-          options={{ title: 'Band' }}
+          options={{ headerTitle: "" }}
         />
         <Stack.Screen 
           name="Concert" 
           component={ConcertScreen}
-          options={{ title: 'Concert' }}
+          options={{ headerTitle: "" }}
         />
       </Stack.Navigator>
     </View>
