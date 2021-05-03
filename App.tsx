@@ -10,7 +10,6 @@ import Navigator from './routes/homeStack'
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Constants from 'expo-constants';
 // import { useDeviceOrientation } from '@react-native-community/hooks'
 
 export default function App() {
@@ -58,6 +57,7 @@ export default function App() {
 const styles = StyleSheet.create({
   section: {
     flex: 1,
+    height: '100%',
     backgroundColor: 'black',
     paddingTop: 40,
     zIndex: 1,

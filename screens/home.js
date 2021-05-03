@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { StyleSheet, View, TextInput, FlatList, ScrollView, Button, TouchableOpacity, SafeAreaView, Text } from 'react-native';
 import YoutubeEmbed from '../components/YoutubeEmbed'
 import BandCard from '../components/BandCard'
 // import { bandArray } from '../bandCache'
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { StatusBar } from 'expo-status-bar';
-import getData from '../getData'
+import fetchBandData from '../fetchBandData'
 import { bandArray } from '../bandCache';
 
 
@@ -19,17 +19,14 @@ export default function HomeScreen() {
 
   useEffect(() => {
     (async () => {
-      const bands = await getData()
+      const bands = await fetchBandData()
       setBands(bands)
     })();
   }, []) 
 
+  useMemo(() => {
 
-
-
-
-
-
+  }, [bands])
 
   const sortBands = (bands) => {
     const sortedBandArray = bands.sort((a, b) => (a.bandName > b.bandName) ? 1 : ((b.bandName > a.bandName) ? -1 : 0))
@@ -37,7 +34,6 @@ export default function HomeScreen() {
   }
 
   // useMemo 
-  console.log(bands)
   // Some loader is bands === undefined
   return(
 
@@ -45,7 +41,7 @@ export default function HomeScreen() {
             
     <SafeAreaView>
 
-      <View style={styles.container}>
+      <View style={styles.youtubeContainer}>
         <YoutubeEmbed 
         style={styles.youtubeEmbed} 
         URLExtension={"3yRMbH36HRE"}
@@ -96,8 +92,14 @@ const styles = StyleSheet.create({
     width: '90%',
     marginHorizontal: '5%'
   },
+  youtubeContainer: {
+    borderWidth: 1,
+    borderColor: 'white',
+    marginTop: 20,
+    width: '90%',
+    marginHorizontal: '5%'
+  },
   youtubeEmbed: {
-    height: 240,
     width: '100%'
   },
   bands: {

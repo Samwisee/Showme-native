@@ -17,7 +17,7 @@ export default function YoutubeEmbed(props) {
   }, []);
 
   const videoHeight = Dimensions.get("screen").width * .9 * (9/16)
-  console.log((videoHeight))
+
 
   return (
     <View>
