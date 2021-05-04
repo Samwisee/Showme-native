@@ -1,23 +1,35 @@
 import ConcertCard from '../components/ConcertCard'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, FlatList, ScrollView, Image, SafeAreaView } from 'react-native';
 import { concertArray } from '../concertCache'
 import { bandArray } from '../bandCache'
 import BandCard from '../components/BandCard'
 import { TouchableOpacity } from 'react-native';
 import { NavigationContainer, useNavigation, useRoute  } from "@react-navigation/native";
+import fetchConcertData from '../fetchConcertData'
  
 
 export default function BandScreen() {
 
   // const {landscape} = useDeviceOrientation()
   const route = useRoute()
-  const [search, setSearch] = useState('')
   const navigation = useNavigation();
+  const [search, setSearch] = useState('')
+  const [concerts, setConcerts] = useState()
+
+  useEffect(() => {
+    (async () => {
+      const concerts = await fetchConcertData()
+      setConcerts(concerts)
+    })()
+  }, [])
 
   const logo = route.params?.bandLogo ?? 'defaultValue'
 
   const bandConcertIDs = route.params?.bandConcerts ?? 'defaultValue'
+
+  console.log(concerts)
+
   const filtered = concertArray.filter(concert => bandConcertIDs.includes(concert.concertID))
 
 
@@ -42,7 +54,7 @@ export default function BandScreen() {
             <ConcertCard 
               name={item.concertName}
               URL={item.concertImageURL}
-              />
+            />
           </TouchableOpacity>
           )}
         />

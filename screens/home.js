@@ -10,6 +10,7 @@ import { bandArray } from '../bandCache';
 import TopBar from '../components/TopBar';
 
 
+
 export default function HomeScreen() {
 
   // const {landscape} = useDeviceOrientation()
